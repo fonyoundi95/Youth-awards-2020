@@ -1,0 +1,26 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+	Edit Mantor
+{% endblock %}
+
+{% block body %}
+	<h1 class="mt-5">
+		Edit Mantor
+	</h1>
+
+	{{
+    include(
+'admin/mantor/_form.html.twig',
+
+      {
+        button_label: 'Update'
+      }
+    )
+  }}
+
+	<a class="btn btn-info" href="{{ path('mantor_index') }}">back to list</a>
+
+{{ include('admin/mantor/_delete_form.html.twig') }}
+
+{% endblock %}

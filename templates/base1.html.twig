@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<title>Awards-
+			{% block title %}WELCOM
+			{% endblock %}
+		</title>
+
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="collapse navbar-collapse" id="navbarColor01">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">+ 237 AWARDS
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Awards</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('mantor_all')}}">Mantors</a>
+
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('cathegorie_all')}}">Cathegories</a>
+
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+                {% if app.user %}
+
+						<li class="nav-item dropdown">
+						
+								{{app.user.email}}
+								<a href="{{path('acount_rprofile')}}" class="dropdown-item">Update profile!</a>
+								<a href="{{path('password_update')}}" class="dropdown-item">Update password!</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{{path('acount_logout')}}" class="dropdown-item">Deconnexion!</a>
+
+
+						</li>
+
+					{% else %}
+						<li class="nav-item">
+							<a href="{{path('acount_login')}}" class="nav-link">Connexion !</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{path('acount_registration')}}" class="nav-link">Inscription !</a>
+
+						</li>
+					{% endif %}
+
+				</ul>
+
+			</ul>
+		</div>
+	</body>
+</html></nav>{% for label, messages in app.flashes %}
+<div class="container mt-1">
+	<div class="alert alert-{{label}}">
+		{% for message in messages %}
+			<p class="text-center">{{message | raw}}</p>
+		{% endfor %}
+	</div>
+</div>{% endfor %}<div class="container"> {% block body %}{% endblock %}
+</div>
+
+<script src="/js/poper.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+{% block javascripts %}{% endblock %}</body></html>
+

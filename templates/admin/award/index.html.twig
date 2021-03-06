@@ -1,0 +1,76 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+	Award index
+{% endblock %}
+
+{% block body %}
+	<h1 class="mt-5">
+		Award index
+	</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					Id
+				</th>
+				<th>
+					Titre
+				</th>
+				<th>
+					Content
+				</th>
+				<th>
+					Image
+				</th>
+				<th>
+					Date de creation
+				</th>
+				<th>
+					actions
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for award in awards %}
+				<tr>
+					<td>
+						{{ award.id }}
+					</td>
+					<td>
+						{{ award.title }}
+					</td>
+					<td>
+						{{ award.conten }}
+					</td>
+					<td>
+						{{ award.imag }}
+					</td>
+					<td>
+						{{ award.createAd ? award.createAd|date('Y-m-d H:i:s') : '' }}
+					</td>
+					<td>
+						<a class="btn btn-info" href="{{ path( 'award_show', { id: award.id } ) }}">
+							show
+						</a>
+
+						<a class="btn btn-success" href="{{ path( 'award_edit', { id: award.id } ) }}">
+							edit
+						</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">
+						no records found
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="btn btn-success" href="{{ path('award_new') }}">Create new</a>
+{% endblock %}
+

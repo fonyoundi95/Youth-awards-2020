@@ -1,0 +1,79 @@
+{% extends 'base1.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="jumbotron mt-5">
+			<h1 class="display-3">
+				Biennvenue! dans notre site !
+			</h1>
+			<p class="lead">
+				This is a simple hero unit, a simple jumbotron-style component for
+																																																																																																																																																																																																																																																																																																																																																																																																				        calling extra attention to featured content or information.
+			</p>
+			<hr class="my-4"/>
+			<p>
+				It uses utility classes for typography and spacing to space content out																																																																																																																																																																																																																																																																																																																																																																																																	        within the larger container.
+			</p>
+			<p class="lead">
+				<a class="btn btn-info btn-lg" href="#" role="button">Learn more</a>
+			</p>
+		</div>
+		<h1>
+			Nos Awards
+		</h1>
+		<div class="row mt-3">
+			{% for  award in awards  %}
+				<div class="col-md-4">
+					<div class="card bg-light mb-3">
+						<div class="card-header text-center">
+							<strong>{{award.title}}</strong>
+						</div>
+						<img src="{{award.imag}}" alt="Image de la cathegorie" style="height: 200px; width: 100%; display: block"/>
+						<div class="card-body">
+							<h4 class="card-title text-center">
+								<strong>Nomine du 237</strong>
+							</h4>
+							<p class="card-text">
+								{{award.conten}}</p>
+							<a href="{{path('voir_award',{ id: award.id })}}" class="btn btn-info">more learn!</a>
+						</div>
+					</div>
+				</div>
+
+			{% endfor %}
+		</div>
+		<pre>
+		
+		</pre>
+		<h1>
+			Nos mantors
+		</h1>
+		<div class="row mt-3">
+			{% for mantor in mantors %}
+
+				<div class="col">
+					<div class="card border-secondary mb-3">
+						<div class="card-body">
+							<strong>
+								<h4 class="card-title">
+									{{mantor.title}}
+								</h4>
+							</strong>
+
+							<hr/>
+							<div class="card-text">
+								<img src="{{mantor.image}}" alt="image du mantor" class="float-left mr-3"/>
+								<p>
+									{{mantor.descriptions}}
+								</p>
+								<a href="{{path('voir_mantor', {id: mantor.id})}}" class="btn btn-success float-right">plus d'infos!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+{% endblock %}
+

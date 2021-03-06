@@ -1,0 +1,19 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+  New Cathegori
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-5">
+    Create new Cathegori
+  </h1>
+
+{{ include('admin/cathegori/_form.html.twig') }}
+
+
+  <a class="btn btn-info mt-1" href="{{ path('cathegori_index') }}">
+    back to list
+  </a>
+{% endblock %}

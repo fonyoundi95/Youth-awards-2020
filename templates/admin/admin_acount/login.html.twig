@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			Connexion a l'administration !</title>
+		<style>
+			.container {
+				display: flex;
+				justify-content: center;
+				height: 100vh;
+
+			}
+			.card {
+				margin-top: 20%
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-md-4">
+				<div class="card bg-ligth">
+					<div class="card-header">
+						<h4 class="card-title">
+							<i class="fas fas-lock"></i>
+							Connexion a l'administration !
+						</h4>
+					</div>
+					<div class="card-body">
+						{% if hasError %}
+							<div class="alert alert-warning">
+								<p>
+									Vos informations ne sont pas correctes !
+								</p>
+							</div>
+						{% endif %}
+                       <form  method="post">
+							<div class="form-group">
+                             <label for="email">Email</label>
+								<input type="text" class="form-control" placeholder="Votre adresse email..." name ="_username" value="{{username}}">
+							</div>
+							<div class="form-group">
+								<label for="_password"> Password</label>
+							<input type="password" class="form-control" placeholder="Votre mot de passe..." name="_password">
+								<div class="form-group">
+									<button type="submit" class="btn btn-success my-1"> Connexion !
+									
+									</button>
+
+									<a href="{{path('awards')}}" class="btn-btn-link">
+										Retour au Site !
+									</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

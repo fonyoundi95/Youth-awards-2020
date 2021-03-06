@@ -1,0 +1,27 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+  Edit Award
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-5">
+    Edit Award
+  </h1>
+
+  {{
+    include(
+'admin/award/_form.html.twig',
+
+      {
+        button_label: 'Update'
+      }
+    )
+  }}
+
+  <a class="btn btn-info mt-1" href="{{ path('award_index') }}">back to list</a>
+
+{{ include('admin/award/_delete_form.html.twig') }}
+
+{% endblock %}

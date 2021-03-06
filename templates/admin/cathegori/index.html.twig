@@ -1,0 +1,79 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+  Cathegori index
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-5">
+    Cathegori index
+  </h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Id
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Imag
+        </th>
+        <th>
+          actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cathegori in cathegoris %}
+        <tr>
+          <td>
+            {{ cathegori.id }}
+          </td>
+          <td>
+            {{ cathegori.title }}
+          </td>
+          <td>
+            {{ cathegori.imag }}
+          </td>
+          <td>
+            <a class="btn btn-info"
+              href="{{
+              path(
+                'cathegori_show',
+                {
+                  id: cathegori.id
+                }
+              )
+              }}">
+              Show
+            </a>
+
+            <a class="btn btn-success"
+              href="{{
+              path(
+                'cathegori_edit',
+                {
+                  id: cathegori.id
+                }
+              )
+              }}">
+              Edit
+            </a>
+          </td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="4">
+            no records found
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a class="btn btn-success" href="{{ path('cathegori_new') }}">Create new</a>
+{% endblock %}

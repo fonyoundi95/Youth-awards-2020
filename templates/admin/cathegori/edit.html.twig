@@ -1,0 +1,29 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+  Edit Cathegori
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-5">
+    Edit Cathegori
+  </h1>
+
+  {{
+    include(
+'admin/cathegori/_form.html.twig',
+
+      {
+        button_label: 'Update'
+      }
+    )
+  }}
+
+  <a class="btn btn-info mt-1" href="{{ path('cathegori_index') }}">
+    back to list
+  </a>
+
+{{ include('admin/cathegori/_delete_form.html.twig') }}
+
+{% endblock %}

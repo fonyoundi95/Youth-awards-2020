@@ -1,0 +1,27 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+  Edit Autor
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-5">
+    Edit Autor
+  </h1>
+
+  {{
+    include(
+      'admin/autor/_form.html.twig',
+
+      {
+        button_label: 'Update'
+      }
+    )
+  }}
+
+  <a class="btn btn-info mt-1" href="{{ path('autor_index') }}">back to list</a>
+
+{{ include('admin/autor/_delete_form.html.twig') }}
+
+{% endblock %}

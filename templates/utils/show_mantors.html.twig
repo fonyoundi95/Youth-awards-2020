@@ -1,0 +1,32 @@
+{% extends "base1.html.twig" %}
+{% block title %}
+	Show-mantors
+{% endblock %}
+{% block body %}
+	<h1 class="mt-5">
+	 {{mantor.title}}
+	</h1>
+	<div class="row mt-3">
+		<div class="col">
+			<div class="card border-secondary mb-3">
+				<div class="card-body">
+					<strong>
+						<h4 class="card-title">
+							{{mantor.title}}
+						</h4>
+					</strong>
+
+					<hr/>
+					<div class="card-text">
+						<img src="{{mantor.image}}" alt="image du mantor" class="float-left mr-3"/>
+						<p>
+							{{mantor.descriptions}}																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                eveniet magni, incidunt cupiditate.
+						</p>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

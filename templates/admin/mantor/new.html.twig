@@ -1,0 +1,19 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+  New Mantor
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-5">
+    Create new Mantor
+  </h1>
+
+{{ include('admin/mantor/_form.html.twig') }}
+
+
+  <a class="btn btn-info mt-1" href="{{ path('mantor_index') }}">
+    back to list
+  </a>
+{% endblock %}

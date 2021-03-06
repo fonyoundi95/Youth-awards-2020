@@ -1,0 +1,41 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}Role Users
+{% endblock %}
+
+{% block body %}
+	<h1 class="mt-5">Role Users</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for role in roles %}
+				<tr>
+					<td>{{ role.id }}</td>
+					<td>{{ role.title }}</td>
+					<td>
+						<a class="btn btn-info" href="{{ path('role_show', {'id': role.id}) }}">show</a>
+
+						<a class="btn btn-success" href="{{ path('role_edit', {'id': role.id}) }}">edit</a>
+
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="btn btn-success" href="{{ path('role_new') }}">Create new</a>
+
+{% endblock %}
+

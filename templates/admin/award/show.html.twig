@@ -1,0 +1,74 @@
+{% extends 'admin/base.html.twig' %}
+
+
+{% block title %}
+  Award
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-5">
+    Award
+  </h1>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>
+          Id
+        </th>
+        <td>
+          {{ award.id }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Title
+        </th>
+        <td>
+          {{ award.title }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Content
+        </th>
+        <td>
+          {{ award.conten }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Image
+        </th>
+        <td>
+          {{ award.imag }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Date de creation
+        </th>
+        <td>
+          {{ award.createAd ? award.createAd|date('Y-m-d H:i:s') : '' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a class="btn btn-info" href="{{ path('award_index') }}">back to list</a>
+
+  <a class="btn btn-success"
+    href="{{
+    path(
+      'award_edit',
+      {
+        id: award.id
+      }
+    )
+    }}">
+    Edit
+  </a>
+
+{{ include('admin/award/_delete_form.html.twig') }}
+
+{% endblock %}
