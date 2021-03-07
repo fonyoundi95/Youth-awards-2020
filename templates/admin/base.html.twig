@@ -4,6 +4,14 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link href="/fontawesome/css/all.css" rel="stylesheet">
+		<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+        <link href="/fontawesome/css/brands.css" rel="stylesheet">
+        <link href="/fontawesome/css/solid.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+
 		<title>Awards-
 			{% block title %}WELCOM
 			{% endblock %}
@@ -12,8 +20,8 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-link" href="#">
-				<i class="fas fa-chart-line"></i>
+			<a class="navbar-link" href="{{path('dashboard_admin')}}">
+				<i class="fas fa-chart-line fx-3"></i>
 				Dasboard
 			</a>
 
@@ -28,7 +36,9 @@
 
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{path('cathegori_index')}}">Cathegory</a>
+						<a class="nav-link" href="{{path('cathegori_index')}}">
+						<i class="fa fa-folder"></i>
+						Cathegory</a>
 
 					</li>
 					<li class="nav-item">
@@ -36,7 +46,9 @@
 
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{path('autor_index')}}">Autors</a>
+						<a class="nav-link" href="{{path('autor_index')}}">
+						<i class="fas fa-users"></i>
+						Autors</a>
 
 					</li>
 
@@ -61,7 +73,7 @@
 				<ul class"navbar-nav ml-auto">
 					<li class="nav-item">
 						<a href="{{path('awards')}}" class="nav-link" target="_blank">
-						<i class="fas fas-eye"> </i>
+						<i class="fas fa-eye"> </i>
 							Voir le site !</a>
 					</li>
                 {% if app.user %}
@@ -87,6 +99,12 @@
 <script src="/js/poper.min.js"></script>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script defer src="/fontawesome/js/all.js"></script>
+<script defer src="/fontawesome/js/brands.js"></script>
+<script defer src="/fontawesome/js/solid.js"></script>
+<script defer src="/fontawesome/js/fontawesome.js"></script>
+
+
 
 {% block javascripts %}{% endblock %}</body></html>
 

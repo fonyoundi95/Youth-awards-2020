@@ -11,19 +11,28 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("admin/award")
+ * @Route("/admin/award")
  */
 class AwardController extends AbstractController
 {
     /**
-     * @Route("/", name="award_index", methods={"GET"})
+     * @Route("/{page<\d+>?1}", name="award_index", methods={"GET"})
      */
-    public function index(AwardRepository $awardRepository): Response
+    public function index($page): Response
     {
-        return $this->render('admin/award/index.html.twig', [
-            'awards' => $awardRepository->findAll(),
-
+         $limite = 5;
+         $start = $page * $limite - $limite;
+          
+         $ripo = $this->getDoctrine()->getRepository(Award::class);
+         $awards = $ripo->findBy([], [], $limite, $start);
+         $totals = count( $ripo->findAll());
+         $pages = ceil($totals/ $limite);
+         return $this->render('admin/award/index.html.twig', [
+         'awards'=> $awards,
+         'pages'=> $pages,
+         'page'=> $page
         ]);
+
     }
 
     /**

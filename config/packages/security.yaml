@@ -26,7 +26,7 @@ security:
         check_path: admin_account_login
       
       logout:
-        path: acount_logout
+        path: admin_acount_logout
         target: awards
 
     main:

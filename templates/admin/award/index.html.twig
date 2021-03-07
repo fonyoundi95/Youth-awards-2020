@@ -29,7 +29,7 @@
 					Date de creation
 				</th>
 				<th>
-					actions
+					Actions
 				</th>
 			</tr>
 		</thead>
@@ -72,5 +72,27 @@
 	</table>
 
 	<a class="btn btn-success" href="{{ path('award_new') }}">Create new</a>
-{% endblock %}
+
+	<div class="d-flex justify-content-center">
+		<ul class="pagination">
+			<li class="page-item {% if page == 1 %} disabled {% endif %}">
+				<a class="page-link" href="{{path('award_index', {'page': page - 1})}}">&laquo;</a>
+
+			</li>
+			{% for i in 1..pages %}
+
+				<li class="page-item {% if page == i %} active {% endif%}">
+					<a class="page-link" href="{{path('award_index', {page : i})}}">{{i}}</a>
+
+				</li>
+			{% endfor %}
+
+			<li class="page-item {% if page == pages %} disabled {% endif %}"></li>
+
+
+			<a class="page-link" href="{{path('award_index', {'page': page + 1})}}">&raquo;</a>
+
+		</li>
+	</ul>
+</div>{% endblock %}
 

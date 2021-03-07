@@ -1,0 +1,147 @@
+{% extends "admin/base.html.twig" %}
+{% block title %}Dashboard Admin
+{% endblock %}
+{% block body %}
+
+	<div class="container-fluid mt-4">
+		<div class="row">
+			<div class="col">
+				<div class="card bg-primary text-white mb-3 text-center">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4">
+								<i class="fas fa-users fa-4x"></i>
+							</div>
+							<div class="col-8">
+								<h4 class="card-title">
+								{{stats.autors}}	 </br> Utilisateurs
+								</h4>
+							</div>
+                            <div>
+                            <a href="{{path('autor_index')}}"> <h5>plus d'infos !
+                             <i class="fas fa-men"></i>
+                            </h5></a> 
+                            </div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card bg-info text-white mb-3 text-center">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4">
+								<i class="fas fa-comments fa-4x"></i>
+							</div>
+							<div class="col-8">
+								<h4 class="card-title">
+								{{stats.comments}}	 </br> Commentaires
+								</h4>
+							</div>
+                             <div>
+                              <a href="{{path('comment_index')}}"> <h5 class="text-white"> 
+                              plus d'infos !
+                               <i class="fas fa-men"></i>
+                              </h5></a> 
+                            </div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card bg-info text-white mb-3 text-center">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4">
+								<i class="fas fa-folder fa-4x"></i>
+							</div>
+							<div class="col-8">
+								<h4 class="card-title">
+								{{stats.cathegoris}}</br> Cathegories
+								</h4>
+							</div>
+                             <div>
+                            <a href="{{path('cathegori_index')}}"> <h5 class="text-white">
+                            plus d'infos !
+                             <i class="fas fa-men"></i>
+                            </h5></a> 
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="card bg-warning text-white mb-3 text-center">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4">
+								<i class="fas fa-men fa-4x"></i>
+							</div>
+							<div class="col-8">
+								<h4 class="card-title">
+								{{stats.mantors}}	 </br>Mantors
+								</h4>
+							</div>
+                             <div>
+                            <a href="{{path('mantor_index')}}"> <h5 class="text-white">
+                            plus d'infos !
+                             <i class="fas fa-men"></i>
+                            </h5></a> 
+                            </div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col">
+				<div class="card bg-success text-white mb-3 text-center">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4">
+								<i class="fas fa-cups fa-4x"></i>
+							</div>
+							<div class="col-8">
+								<h4 class="card-title">
+							    {{stats.awards}} </br>Awards
+								</h4>
+							</div>
+                             <div>
+                            <a href="{{path('award_index')}}"> <h5 class="text-white">
+                            plus d'infos !
+                             <i class="fas fa-men"></i>
+                            </h5></a> 
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card bg-danger text-white mb-3 text-center">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4">
+								<i class="fas fa-men fa-4x"></i>
+							</div>
+							<div class="col-8">
+								<h4 class="card-title">
+									{{stats.roles}} </br>Roles
+								</h4>
+							</div>
+                             <div>
+                            <a href="{{path('role_index')}}"> <h5>plus d'infos !
+                             <i class="fas fa-men"></i>
+                            </h5></a> 
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>{% endblock %}
+
