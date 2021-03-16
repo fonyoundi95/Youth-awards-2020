@@ -46,7 +46,9 @@ class Award
     private $cathegori;
 
     /**
-     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="awards")
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="awards", 
+     * cascade={"persist"}, orphanRemoval=true)
+     *
      */
     private $comments;
 

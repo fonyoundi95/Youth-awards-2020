@@ -28,14 +28,12 @@ class UserController extends AbstractController
 
     /**
      * permet d'afficher le profile de l'utilisateur connecter
-     * @Route("/mycount", name="my_count")
+     * @Route("/mytest", name="my_count")
      * @return reponse
      */
     public function mycount()
     {
-        return $this->render('user/userprofile.html.twig', [
-            'user' => $this->getUser()
-        ]);
+        return $this->render('test.html.twig', );
     }
     
 

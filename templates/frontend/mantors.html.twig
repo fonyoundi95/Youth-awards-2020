@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+{% block title %}Nos Mantors
+{% endblock %}
+{% block body %}
+<div class="section section-breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Nos Mantors</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="section">
+    <div class="container">
+        <div class="section-title">
+            <h1>Vous etes les meilleurs!</h1>
+        </div>
+        <div class="row">
+
+            <!-- Blog Post Excerpt -->
+            {% for mantor in mantors %}
+            <div class="col-sm-6">
+                <div class="blog-post blog-single-post">
+                    <div class="single-post-title">
+                        <h2>{{mantor.title}}</h2>
+                    </div>
+
+                    <div class="single-post-image">
+                        <img src="/basica/img/blog/4.jpg" alt="Post Title">
+                    </div>
+
+                    <div class="single-post-info">
+                        <i class="glyphicon glyphicon-time"></i>15 OCT, 2014 <a href="#" title="Show Comments"><i
+                                class="glyphicon glyphicon-comment"></i>11</a>
+                    </div>
+
+                    <div class="single-post-content">
+                        <p>
+                           {{mantor.descriptions}}
+                        </p>
+                        <a href="{{path('voir_mantor', {id: mantor.id})}}" class="btn">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- End Blog Post Excerpt -->
+
+            <!-- Pagination -->
+            <div class="pagination-wrapper ">
+                <ul class="pagination pagination-sm">
+                    <li class="disabled"><a href="#">Previous</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

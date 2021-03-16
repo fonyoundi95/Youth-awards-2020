@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+{% block title %} Show-Mantor{% endblock %}
+{% block body %}
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Product Details</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Product Image & Available Colors -->
+            <div class="col-sm-6">
+                <div class="product-image-large">
+                    <img src="/basica/img/portfolio/6.jpg" alt="Item Name">
+                </div>
+                <div class="colors">
+                    <span class="color-white"></span>
+                    <span class="color-black"></span>
+                    <span class="color-blue"></span>
+                    <span class="color-orange"></span>
+                    <span class="color-green"></span>
+                </div>
+            </div>
+            <!-- End Product Image & Available Colors -->
+            <!-- Product Summary & Options -->
+            <div class="col-sm-6 product-details">
+                <h2>{{mantor.title}}</h2>
+                <h3>Quick Overview</h3>
+                <p>
+                  {{mantor.descriptions}}
+                 </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.
+                </p>
+                <h3>Project Details</h3>
+                <p><strong>Client: </strong>Vactual Art</p>
+                <p><strong>Date: </strong>August 21, 2015</p>
+                <p><strong>Tags: </strong>Photography, Art, Graphics</p>
+            </div>
+            <!-- End Product Summary & Options -->
+
+        </div>
+    </div>
+</div>
+<hr>
+{% endblock %}

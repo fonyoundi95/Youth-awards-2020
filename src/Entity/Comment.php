@@ -29,7 +29,8 @@ class Comment
     private $createAd;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Award::class, inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity=Award::class, inversedBy="comments", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      */
     private $awards;
 

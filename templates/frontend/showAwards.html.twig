@@ -1,0 +1,77 @@
+   {% extends "base.html.twig" %}
+   {% block title %}
+	Show-mantors
+   {% endblock %}
+   {% block body %}
+   <div class="section section-breadcrumbs">
+       <div class="container">
+           <div class="row">
+               <div class="col-md-12">
+                   <h1>Effectuez votre vote en laissan juste un commentaire.</h1>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="section">
+       <div class="container">
+           <div class="row">
+               <!-- Blog Post -->
+               <div class="col-sm-8 ">
+                   <div class="blog-post blog-single-post ">
+                       <div class="single-post-title">
+                           <h2>{{award.title}}</h2>
+                       </div>
+
+                       <div class="single-post-image">
+                           <img src="/basica/img/blog/1.jpg" alt="Post Title">
+                       </div>
+                       <hr>
+                         {% if award.comments | length > 0 %}
+                         
+                           <h3>Nombre total des votes {{award.comments | length}}  </h3>
+                                {% for comment in award.comments %}
+                                    
+                            <div class="single-post-info">
+                                <i class="glyphicon glyphicon-time">  le  {{comment.createAd|date('y-m-d')}} a {{comment.createAd|date('H:i:s')}}  </i> <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i></a>
+                            </div>
+                            <div class="single-post-content">
+                                <p >Vote de : <em> <strong> {{comment.autors.name}} </strong></em></p>
+                                <hr>
+                                <p class ="pl-3 pr-3 text-break">
+                                  {{comment.content}}
+                                </p>
+                        
+                            </div>
+                            {% endfor %}
+
+                            {% else %}
+                                
+                           <h3> Souyez le premier a voter pour ce candidat !</h3>
+                         {% endif %}
+
+                         <div class="alert alert-ligth">
+                         {{form_start(form) }}
+                         {{form_widget(form)}}
+                         <button type="submit" class="btn btn-success"> Validez!</button>
+                         {{form_end(form)}}                         
+                         
+                         </div>
+
+                   </div>
+               </div>
+               <!-- End Blog Post -->
+               <!-- Sidebar -->
+               <div class="col-sm-4 blog-sidebar">
+               <div class="single-post-content">
+                   <h4>Description du candidat</h4> 
+                     <p class="pl-3 pr-3 text-break">
+                          {{award.conten}}
+                     
+                      </p>
+                                
+                  </div>       
+               </div>
+           </div>
+       </div>
+   </div>
+   {% endblock %}

@@ -1,0 +1,43 @@
+	<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="index.php"><img src="/basica/img/logo.png" alt="Basica"></a>
+	        </div>
+	        <div class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav navbar-left">
+	                <li class="active"><a href="">+237 Awards</a></li>
+	                <li><a href="{{path('awards_frontend')}}">Awards</a></li>
+	                <li><a href="{{path('mantor_all')}}">Mantors</a></li>
+	                <li><a href="{{path('cathegorie_all')}}">Cathegory</a></li>
+	                <li><a href="{{path('contact_us')}}">Contact us</a></li>
+					 <li><a href="{{path('about_us')}}">About us</a></li>
+	            </ul>
+	            <ul class="nav navbar-nav navbar-right">
+				{% if app.user %}
+	                        <li><a href="{{path('acount_rprofile')}}">Update profile</a></li>
+	                        <li class="divider"></li>
+	                        <li><a href="{{path('password_update')}}">Update password</a></li>
+	                        <li class="divider"></li>
+	                        <li><a href="{{path('acount_logout')}}">Deconnexion !</a></li>
+	                        <li class="divider"></li>
+	                  
+			        {% else %}
+			
+							<li><a href="{{path('admin_account_login')}}">Connexion Admin!</a></li>
+							<li class="divider"></li>
+							<li><a href="{{path('acount_login')}}">Connexion!</a></li>
+							<li class="divider"></li>
+							<li><a href="{{path('acount_registration')}}">Inscription!</a></li>
+
+				 </ul>
+                {% endif %}
+	        </div>
+	    </div>
+	</header>
+	
